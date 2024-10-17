@@ -61,7 +61,9 @@ const isOpen = ref(false)
               <RouterLink to="/jobs" class="navbar-item" active-class="is-active">
                 Jobs
               </RouterLink>
-              <RouterLink to="contacts/index" class="navbar-item"> Contact </RouterLink>
+              <RouterLink to="contacts/index" class="navbar-item" active-class="is-active">
+                Contact
+              </RouterLink>
               <hr class="navbar-divider" />
               <a class="navbar-item"> Report an issue </a>
             </div>
@@ -88,5 +90,10 @@ const isOpen = ref(false)
   color: yellow;
   font-weight: bold;
   border-bottom: 2px solid darkgoldenrod;
+}
+
+.is-active {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid darkblue;
 }
 </style>
