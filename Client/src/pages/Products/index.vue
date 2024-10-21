@@ -22,7 +22,7 @@ products.value = getAll().data
 }
 
 .shelf .box {
-  width: 17rem;
+  width: 15rem;
   flex-grow: 1;
 }
 </style>
