@@ -80,7 +80,7 @@ const isCartOpen = ref(false)
               </a>
               <a class="button is-light"> Log in </a>
               <button
-                class="button is-warning is-light is-active"
+                class="button is-warning is-light"
                 :class="{ 'is-focused': isCartOpen }"
                 @click="isCartOpen = !isCartOpen"
               >
@@ -94,9 +94,7 @@ const isCartOpen = ref(false)
       </div>
     </div>
   </nav>
-  <FlyoutPanel :is-open="isCartOpen">
-    <h1 class="title">Shopping Cart</h1>
-  </FlyoutPanel>
+  <FlyoutPanel :is-open="isCartOpen"> <shoppingCart /> </FlyoutPanel>
 </template>
 
 <style scoped>
