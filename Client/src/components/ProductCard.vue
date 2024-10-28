@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { Product } from '@/models/products'
+import { addToCart } from '@/models/shoppingCart'
 
-defineProps<{
+const props = defineProps<{
   product: Product
 }>()
+const { product } = props
 </script>
 
 <template>
@@ -13,9 +15,10 @@ defineProps<{
     </div>
     <div class="box-content">
       <h3>{{ product.title }}</h3>
+      <i>{{ product.brand }}</i>
       <p>{{ product.description }}</p>
-      <p class="price">{{ product.price }}</p>
-      <button class="button is-success">Add to cart</button>
+      <p class="price">${{ product.price }}</p>
+      <button class="button is-success" @click="addToCart(product)">Add to Cart</button>
     </div>
   </div>
 </template>
@@ -25,10 +28,14 @@ h3 {
   font-weight: bold;
 }
 
+i {
+  color: #888;
+}
+
 .price {
-  font-weight: bold;
-  font-size: 2em;
-  float: right;
   color: chocolate;
+  font-size: 2em;
+  font-weight: bold;
+  float: right;
 }
 </style>
