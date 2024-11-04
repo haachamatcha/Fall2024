@@ -1,4 +1,4 @@
-const model = require("../model/users");
+const data = require("../controllers/users.json");
 const express = require("express");
 const app = express.Router();
 
