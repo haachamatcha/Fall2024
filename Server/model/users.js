@@ -1,3 +1,6 @@
+/*  B"H
+ */
+
 const data = require("../data/users.json");
 
 function getAll() {
@@ -5,7 +8,7 @@ function getAll() {
 }
 
 function get(id) {
-  return data.items.find((user) => user.id === id);
+  return data.items.find((user) => user.id == id);
 }
 
 function add(user) {
@@ -13,19 +16,17 @@ function add(user) {
   data.items.push(user);
   return user;
 }
+
 function update(id, user) {
-  const userToUpdate = data.items.find((user) => user.id === id);
-  Object.assign(userToUpdate, req.body);
+  const userToUpdate = data.items.find((user) => user.id == id);
+  Object.assign(userToUpdate, user);
   return userToUpdate;
 }
 
 function remove(id) {
-  const userIndex = data.items.findIndex((user) => user.id === id);
-  data.items.splice(userIndex);
-  return {
-    success: true,
-    message: "User has been deleted",
-  };
+  const userIndex = data.items.findIndex((user) => user.id == id);
+  data.items.splice(userIndex, 1);
+  return { success: true, message: "User deleted", id: id };
 }
 
 module.exports = {

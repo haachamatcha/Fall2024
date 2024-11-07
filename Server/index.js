@@ -6,10 +6,10 @@ const PORT = 3000;
 
 app
   .get("/", (req, res) => {
-    res.send("The World Hasn't Ended Yet.");
+    res.send("Hello World");
   })
   .get("/about", (req, res) => {
-    res.send("About Us.");
+    res.send("About Us");
   })
   .use("/users", userController);
 
